@@ -53,13 +53,7 @@ class MenuItemsController < ApplicationController
 
   # DELETE /menu_items/1
   # DELETE /menu_items/1.json
-  def destroy
-    @menu_item.destroy
-    respond_to do |format|
-      format.html { redirect_to menu_items_url, notice: 'Menu item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -72,3 +66,6 @@ class MenuItemsController < ApplicationController
       params.require(:menu_item).permit(:name, :price)
     end
 end
+
+
+
