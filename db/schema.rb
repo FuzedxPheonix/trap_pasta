@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519164803) do
+ActiveRecord::Schema.define(version: 20170519190125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170519164803) do
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "credit"
   end
 
   create_table "menus", force: :cascade do |t|
@@ -42,6 +43,10 @@ ActiveRecord::Schema.define(version: 20170519164803) do
     t.string "customer_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity"
+    t.string "comment"
   end
 
+  add_foreign_key "menu_items_orders", "menus", column: "menu_item_id", name: "menu_items_orders_menu_item_id_fkey"
+  add_foreign_key "menu_items_orders", "orders", name: "menu_items_orders_order_id_fkey"
 end

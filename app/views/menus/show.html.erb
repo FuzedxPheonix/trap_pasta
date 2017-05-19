@@ -3,6 +3,8 @@
 <p>
   <strong>Name:</strong>
   <%= @menu.name %>
+  <%= @menu.id %>
+
 </p>
 
 <p>
@@ -11,7 +13,7 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @menu.price %>
+  <%= @menu.price / 100.00 %>
 </p>
 
 <p>
@@ -19,5 +21,10 @@
   <%= @menu.description %>
 </p>
 
+<!-- 
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
+ -->
+
+<%= link_to 'Place Your Order', new_menu_items_order_path %>
+ 
 <%= link_to 'Back', menus_path %>
