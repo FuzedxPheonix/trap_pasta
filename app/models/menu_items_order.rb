@@ -1,0 +1,2 @@
+class MenuItemsOrder < ApplicationRecord
+end
